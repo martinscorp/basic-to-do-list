@@ -1,14 +1,16 @@
-import random
+tasks = []
 
-secret_number = random.randint(1, 100)
+def add_task(task):
+    tasks.append(task)
 
-def guess_number(guess):
-    if guess < secret_number:
-        print("Too low!")
-    elif guess > secret_number:
-        print("Too high!")
-    else:
-        print("Congratulations! You guessed the number.")
+def remove_task(task):
+    tasks.remove(task)
+
+def display_tasks():
+    for task in tasks:
+        print(task)
 
 # Usage example
-guess_number(50)
+add_task("Buy groceries")
+add_task("Finish homework")
+display_tasks()
